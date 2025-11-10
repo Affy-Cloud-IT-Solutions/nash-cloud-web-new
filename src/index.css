@@ -1,1 +1,203 @@
 @import "tailwindcss";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Smooth gradient line movement */
+/* Flowing top gradient */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradientFlow {
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease infinite;
+}
+
+/* Gentle brand pulse */
+@keyframes pulseSlow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s infinite ease-in-out;
+}
+
+/* Expanding brand underline */
+@keyframes expand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 40px;
+    opacity: 1;
+  }
+}
+
+.animate-expand {
+  animation: expand 1s ease-out forwards;
+}
+
+/* below we have animations of hero section--------------------------------------------- */
+/* Smooth glowing background pulse */
+@keyframes glowSlow {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.animate-glowSlow {
+  animation: glowSlow 6s ease-in-out infinite;
+}
+
+/* Background gradient flow */
+@keyframes bgFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-bgFlow {
+  animation: bgFlow 10s ease infinite;
+}
+
+/* Floating slow motion (for decorative lights) */
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-floatSlow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatReverse {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.animate-floatReverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+/* services animations ------------------------------------------------------------------------------ */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+@keyframes pulseSlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulseSlow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floatSlow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
