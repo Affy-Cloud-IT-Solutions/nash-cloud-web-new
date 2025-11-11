@@ -57,9 +57,9 @@ const Navbar = () => {
                     </li>
                     <li
                         className="relative group cursor-pointer"
-                        onClick={() => handleScroll("services")}
+                        onClick={() => handleScroll("testimonials")}
                     >
-                        Services
+                        Testimonials
                     </li>
                     <li
                         className="relative group cursor-pointer"
@@ -79,7 +79,7 @@ const Navbar = () => {
                     <span className="w-6 h-0.5 bg-white"></span>
                 </div>
             </nav>
-
+            a
             {/* Mobile Dropdown */}
             {menuOpen && (
                 <div className="md:hidden bg-[#0d47a1]/90 backdrop-blur-md border-t border-[#00B4FF]/20 py-4">
@@ -88,7 +88,7 @@ const Navbar = () => {
                         <li>
                             <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
                         </li>
-                        <li onClick={() => { handleScroll("services"); setMenuOpen(false); }}>Services</li>
+                        <li onClick={() => { handleScroll("testimonials"); setMenuOpen(false); }}>Testimonials</li>
                         <li onClick={() => { handleScroll("contact"); setMenuOpen(false); }}>Contact Us</li>
                     </ul>
                 </div>
