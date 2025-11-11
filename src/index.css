@@ -335,3 +335,19 @@
 .animate-fadeInUp {
   animation: fadeInUp 1s ease-out;
 }
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInSlide {
+  animation: fadeInSlide 0.8s ease-out forwards;
+}

@@ -5,19 +5,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import SapServices from "./components/SapServices";
-import Services from "./components/Services";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import ITSolutions from "./components/ITSolutions";
 import InternalProducts from "./components/InternalProducts";
 import Testimonials from "./components/Testimonials";
-
+import OpportunitiesAndTraining from "./components/OpportunitiesAndTraining";
+import SapServicesPage from "./pages/SapServicesPage";
+import ITSolutionsPage from "./pages/ITSolutionsPage";
+import ResourceAndConsultingPage from "./pages/ResourceAndConsultingPage";
+import InternalProductPage from "./pages/InternalProductPage";
+import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 // Pages
 import About from "./pages/About";
 
 const LandingPage = () => (
   <>
-
     <section id="home"><HeroSection /></section>
 
     <section id="sap"><SapServices /></section>
@@ -26,9 +29,9 @@ const LandingPage = () => (
 
     <section id="products"><InternalProducts /></section>
 
-    <section id="testimonials"><Testimonials /></section>
+    <section id="opportunities"><OpportunitiesAndTraining /></section>
 
-    {/* <section id="services"><Services /></section> */}
+    <section id="testimonials"><Testimonials /></section>
 
     <section id="contact"><ContactUs /></section>
 
@@ -45,6 +48,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/sap-services" element={<SapServicesPage />} />
+        <Route path="/internal-product" element={<InternalProductPage />} />
+        <Route path="/opportunities" element={<OpportunitiesAndTrainingPage />} />
+        <Route path="/resourcing" element={<ResourceAndConsultingPage />} />
+        <Route path="/it-solutions" element={<ITSolutionsPage />} />
+
       </Routes>
     </Router>
   );
