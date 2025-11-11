@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const navigate = useNavigate();
 
-    const navItems = ["Home", "About Us", "Services", "Contact Us"];
+    const handleScroll = (id) => {
+        if (window.location.pathname !== "/") {
+            navigate("/");
+            setTimeout(() => {
+                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        } else {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -14,75 +25,74 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out ${isScrolled
-                    ? "backdrop-blur-2xl bg-[rgba(13,71,161,0.15)] border-b border-[#00B4FF]/30 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
-                    : "backdrop-blur-md bg-[rgba(13,71,161,0.08)] border-b border-[#00B4FF]/10"
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-lg bg-[#061943]/70 shadow-md" : "bg-transparent"
                 }`}
         >
-            {/* Animated gradient strip */}
-            <div className="h-[3px] bg-gradient-to-r from-[#0d47a1] via-[#00B4FF] to-[#0d47a1] animate-gradientFlow" />
+            {/* Gradient Top Line */}
+            <div className="h-[3px] bg-gradient-to-r from-[#0d47a1] via-[#00B4FF] to-[#0d47a1]" />
 
-            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex justify-between items-center">
-                {/* Logo */}
-                <div className="relative text-2xl md:text-3xl font-extrabold tracking-wide text-white drop-shadow-md">
-                    <span className="text-[#00B4FF] animate-pulse-slow">Nash</span> Cloud IT Solutions
-                    <div className="absolute -bottom-2 left-0 w-10 h-[2px] bg-[#00B4FF]/80 rounded-full animate-expand"></div>
+            {/* Navbar Content */}
+            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
+                <div
+                    className="text-2xl md:text-3xl font-bold tracking-wide text-white cursor-pointer"
+                    onClick={() => navigate("/")}
+                >
+                    <span className="text-[#00B4FF]">Nash</span> Cloud IT Solutions
                 </div>
 
-                {/* Desktop Menu */}
                 <ul className="hidden md:flex space-x-10 text-gray-200 font-medium">
-                    {navItems.map((item) => (
-                        <li key={item} className="relative group">
-                            <a
-                                href={`#${item.toLowerCase().replace(" ", "-")}`}
-                                className="text-gray-300 hover:text-[#00B4FF] transition-all duration-500"
-                            >
-                                {item}
-                            </a>
-                            <span className="absolute left-0 bottom-[-6px] w-0 h-[2px] bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] transition-all duration-500 group-hover:w-full"></span>
-                        </li>
-                    ))}
+                    <li
+                        className="relative group cursor-pointer"
+                        onClick={() => handleScroll("home")}
+                    >
+                        Home
+                    </li>
+                    <li>
+                        <Link
+                            to="/about"
+                            className="hover:text-[#00B4FF] transition-colors duration-300"
+                        >
+                            About Us
+                        </Link>
+                    </li>
+                    <li
+                        className="relative group cursor-pointer"
+                        onClick={() => handleScroll("services")}
+                    >
+                        Services
+                    </li>
+                    <li
+                        className="relative group cursor-pointer"
+                        onClick={() => handleScroll("contact")}
+                    >
+                        Contact Us
+                    </li>
                 </ul>
 
                 {/* Mobile Menu Button */}
                 <div
-                    className="md:hidden flex flex-col justify-center items-center cursor-pointer space-y-1.5"
+                    className="md:hidden flex flex-col cursor-pointer space-y-1.5"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
-                    <span
-                        className={`w-7 h-[2px] bg-white transition-all duration-500 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""
-                            }`}
-                    ></span>
-                    <span
-                        className={`w-7 h-[2px] bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : "opacity-100"
-                            }`}
-                    ></span>
-                    <span
-                        className={`w-7 h-[2px] bg-white transition-all duration-500 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
-                            }`}
-                    ></span>
+                    <span className="w-6 h-0.5 bg-white"></span>
+                    <span className="w-6 h-0.5 bg-white"></span>
+                    <span className="w-6 h-0.5 bg-white"></span>
                 </div>
             </nav>
 
             {/* Mobile Dropdown */}
-            <div
-                className={`md:hidden transition-all duration-700 ease-in-out overflow-hidden ${menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-                    }`}
-            >
-                <ul className="flex flex-col items-center space-y-6 py-6 backdrop-blur-xl bg-[rgba(6,25,67,0.7)] border-t border-[#00B4FF]/20 shadow-[inset_0_0_20px_rgba(0,180,255,0.1)] text-gray-100 font-medium text-lg">
-                    {navItems.map((item) => (
-                        <li key={item}>
-                            <a
-                                href={`#${item.toLowerCase().replace(" ", "-")}`}
-                                className="hover:text-[#00B4FF] transition-all duration-300"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                {item}
-                            </a>
+            {menuOpen && (
+                <div className="md:hidden bg-[#0d47a1]/90 backdrop-blur-md border-t border-[#00B4FF]/20 py-4">
+                    <ul className="flex flex-col items-center space-y-4 text-gray-100">
+                        <li onClick={() => { handleScroll("home"); setMenuOpen(false); }}>Home</li>
+                        <li>
+                            <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
                         </li>
-                    ))}
-                </ul>
-            </div>
+                        <li onClick={() => { handleScroll("services"); setMenuOpen(false); }}>Services</li>
+                        <li onClick={() => { handleScroll("contact"); setMenuOpen(false); }}>Contact Us</li>
+                    </ul>
+                </div>
+            )}
         </header>
     );
 };

@@ -80,45 +80,34 @@
 }
 
 /* below we have animations of hero section--------------------------------------------- */
-/* Smooth glowing background pulse */
-@keyframes glowSlow {
-
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1);
+@keyframes ringSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
-  50% {
-    opacity: 0.5;
-    transform: scale(1.05);
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-.animate-glowSlow {
-  animation: glowSlow 6s ease-in-out infinite;
+.animate-ringSpin {
+  animation: ringSpin 18s linear infinite;
 }
 
-/* Background gradient flow */
-@keyframes bgFlow {
-  0% {
-    background-position: 0% 50%;
+@keyframes ringSpinReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 }
 
-.animate-bgFlow {
-  animation: bgFlow 10s ease infinite;
+.animate-ringSpinReverse {
+  animation: ringSpinReverse 22s linear infinite;
 }
 
-/* Floating slow motion (for decorative lights) */
 @keyframes floatSlow {
 
   0%,
@@ -127,7 +116,7 @@
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
   }
 }
 
@@ -143,12 +132,68 @@
   }
 
   50% {
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
 }
 
 .animate-floatReverse {
-  animation: floatReverse 8s ease-in-out infinite;
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-bgPulse {
+  animation: bgPulse 8s ease-in-out infinite;
+}
+
+@keyframes bgPulseReverse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+.animate-bgPulseReverse {
+  animation: bgPulseReverse 10s ease-in-out infinite;
+}
+
+@keyframes arrowFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-arrowFloat {
+  animation: arrowFloat 2s ease-in-out infinite;
+}
+
+.perspective-\[1000px\] {
+  perspective: 1000px;
 }
 
 /* services animations ------------------------------------------------------------------------------ */
@@ -200,4 +245,93 @@
 
 .animate-floatSlow {
   animation: floatSlow 6s ease-in-out infinite;
+}
+
+
+/* testimonials animations ------------------------------------------------------------------------------ */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marqueeReverse {
+  animation: marqueeReverse 26s linear infinite;
+}
+
+/* Optional: pause on hover */
+#testimonials .animate-marquee:hover,
+#testimonials .animate-marqueeReverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marqueeReverse {
+  animation: marqueeReverse 26s linear infinite;
+}
+
+/* Optional: pause on hover */
+#testimonials .animate-marquee:hover,
+#testimonials .animate-marqueeReverse:hover {
+  animation-play-state: paused;
+}
+
+/* about us animations ------------------------------------------------------------------------------ */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
 }
