@@ -115,7 +115,7 @@ const HeroSection = () => {
                             <div className="absolute inset-0 bg-gradient-to-b from-[#0D47A1]/25 via-[#061943]/40 to-[#061943]/70 backdrop-blur-[2px]"></div>
 
                             <div className="relative z-10 flex flex-col items-center justify-center h-full px-5">
-                                <h2 className="text-xl md:text-2xl font-semibold text-[#00B4FF] mb-2 drop-shadow-[0_0_10px_rgba(0,180,255,0.3)]">
+                                <h2 className="text-xl md:text-2xl font-semibold text-gray-200 mb-2 drop-shadow-[0_0_10px_rgba(0,180,255,0.3)]">
                                     {slide.title}
                                 </h2>
                                 <p className="text-gray-100 text-sm md:text-base">{slide.subtitle}</p>

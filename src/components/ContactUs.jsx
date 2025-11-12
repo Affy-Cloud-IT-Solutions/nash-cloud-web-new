@@ -115,7 +115,7 @@ const ContactUs = () => {
 
                     {/* ✅ Content */}
                     <div className="relative z-10 text-white">
-                        <h3 className="text-2xl font-semibold text-[#00B4FF] mb-6">
+                        <h3 className="text-2xl font-semibold text-gray-200 mb-6">
                             Office Information
                         </h3>
 
@@ -130,7 +130,7 @@ const ContactUs = () => {
                                 <p>
                                     <a
                                         href="mailto:Masterakbarkhan@outlook.com"
-                                        className="text-[#00B4FF] hover:underline"
+                                        className="text-gray-200 hover:underline"
                                     >
                                         Masterakbarkhan@outlook.com
                                     </a>
@@ -142,7 +142,7 @@ const ContactUs = () => {
                                 <p>
                                     <a
                                         href="tel:+447776839310"
-                                        className="text-[#00B4FF] hover:underline"
+                                        className="text-gray-200 hover:underline"
                                     >
                                         +44 7776 839310
                                     </a>

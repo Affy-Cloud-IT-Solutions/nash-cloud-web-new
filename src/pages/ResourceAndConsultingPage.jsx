@@ -1,5 +1,7 @@
 import React from "react";
 import { Users, Briefcase, Globe, LineChart, Handshake } from "lucide-react";
+import ITConsultingImage from '/images/ITConsultingImage.jpeg'
+import globalConnectImage from '/images/globalConnectImage.jpeg'
 
 const consultingServices = [
     {
@@ -7,6 +9,7 @@ const consultingServices = [
         description:
             "Helping organizations define and execute technology roadmaps that align business goals with innovation-driven growth and operational excellence.",
         icon: <LineChart className="w-10 h-10 text-[#00B4FF]" />,
+        img: ITConsultingImage,
         align: "left",
     },
     {
@@ -14,6 +17,7 @@ const consultingServices = [
         description:
             "Providing skilled IT professionals and SAP consultants who integrate seamlessly with your teams to scale productivity and ensure project success.",
         icon: <Users className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80", // teamwork developers
         align: "right",
     },
     {
@@ -21,6 +25,7 @@ const consultingServices = [
         description:
             "Connecting businesses with top-tier global talent through flexible engagement models that ensure speed, cost-efficiency, and quality delivery.",
         icon: <Globe className="w-10 h-10 text-[#00B4FF]" />,
+        img: globalConnectImage, // global network
         align: "left",
     },
     {
@@ -28,6 +33,7 @@ const consultingServices = [
         description:
             "Ensuring efficient and risk-free project delivery by combining technical excellence, agile methodologies, and real-world implementation expertise.",
         icon: <Briefcase className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80", // agile team board
         align: "right",
     },
     {
@@ -35,6 +41,7 @@ const consultingServices = [
         description:
             "Offering long-term strategic advisory to help enterprises adapt, innovate, and grow in the ever-evolving digital landscape.",
         icon: <Handshake className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80", // handshake
         align: "left",
     },
 ];
@@ -47,7 +54,7 @@ const ResourceAndConsultingPage = () => {
                 className="absolute inset-0 bg-cover bg-center opacity-30"
                 style={{
                     backgroundImage:
-                        "url('https://images.unsplash.com/photo-1551836022-4c4c79ecde72?auto=format&fit=crop&w=1920&q=80')",
+                        "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80')",
                 }}
             ></div>
 
@@ -61,7 +68,12 @@ const ResourceAndConsultingPage = () => {
                     Resourcing & Consulting
                 </h1>
                 <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                    At <span className="text-[#00B4FF] font-semibold">Nash Cloud IT Solutions</span>, we deliver smart, scalable, and people-driven consulting services that empower enterprises to thrive in the digital era.
+                    At{" "}
+                    <span className="text-[#00B4FF] font-semibold">
+                        Nash Cloud IT Solutions
+                    </span>
+                    , we deliver smart, scalable, and people-driven consulting services
+                    that empower enterprises to thrive in the digital era.
                 </p>
             </div>
 
@@ -104,15 +116,14 @@ const ResourceAndConsultingPage = () => {
                             </p>
                         </div>
 
-                        {/* === Decorative Background Box === */}
+                        {/* === Decorative Background Box (Image) === */}
                         <div
                             className="hidden md:block flex-1 h-[250px] rounded-2xl overflow-hidden relative bg-gradient-to-br from-[#0D47A1]/40 to-[#061943]/60 border border-[#00B4FF]/20 shadow-[0_0_20px_rgba(0,180,255,0.1)]"
                         >
                             <div
-                                className="absolute inset-0 bg-cover bg-center opacity-50"
+                                className="absolute inset-0 bg-cover bg-center scale-105 group-hover:scale-110 transition-transform duration-700"
                                 style={{
-                                    backgroundImage:
-                                        "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=80')",
+                                    backgroundImage: `url(${service.img})`,
                                 }}
                             ></div>
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#061943]/80"></div>

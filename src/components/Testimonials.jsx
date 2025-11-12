@@ -1,5 +1,6 @@
 import React from "react";
-import { FaStar } from "react-icons/fa"; // ⭐ icon
+import { motion } from "framer-motion";
+import { FaStar } from "react-icons/fa";
 
 const partners = [
     {
@@ -20,107 +21,136 @@ const partners = [
     },
 ];
 
-const Row = ({ reverse = false }) => (
-    <div
-        className={`flex w-[200%] ${reverse ? "animate-marqueeReverse" : "animate-marquee"
-            } select-none`}
-    >
-        {[...Array(2)].map((_, dup) => (
-            <div key={dup} className="flex items-center shrink-0">
-                {partners.map((p, i) => (
-                    <div
-                        key={`${p.name}-${dup}-${i}`}
-                        className="relative mx-6 flex flex-col items-center justify-center 
-              min-w-[190px] md:min-w-[230px] h-[160px] rounded-2xl 
-              bg-gradient-to-br from-white/10 via-white/5 to-transparent
-              border border-[#00B4FF]/30 backdrop-blur-xl 
-              shadow-[0_0_25px_rgba(0,180,255,0.1)]
-              overflow-hidden transition-all duration-500
-              hover:shadow-[0_0_40px_rgba(0,180,255,0.4)] hover:scale-[1.05]
-              group"
-                    >
-                        {/* Subtle gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4FF]/10 via-transparent to-[#0D47A1]/20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+// Animation Variants
+const containerVariants = {
+    animate: {
+        transition: {
+            staggerChildren: 0.25,
+            repeat: Infinity,
+            repeatType: "mirror",
+            duration: 2,
+        },
+    },
+};
 
-                        {/* Logo */}
-                        <div className="relative z-10 flex justify-center items-center w-full">
-                            <img
-                                src={p.img}
-                                alt={p.name}
-                                className="h-12 md:h-14 w-auto max-w-[150px] object-contain 
-                  filter brightness-110 contrast-110 grayscale group-hover:grayscale-0 
-                  transition-all duration-500"
-                            />
-                        </div>
-
-                        {/* Company Name */}
-                        <span className="relative z-10 mt-3 text-gray-100 text-xs md:text-sm font-semibold text-center whitespace-nowrap group-hover:text-[#00B4FF] transition-colors duration-500">
-                            {p.name}
-                        </span>
-
-                        {/* Stars */}
-                        <div className="relative z-10 mt-1 flex space-x-1">
-                            {[...Array(5)].map((_, idx) => (
-                                <FaStar key={idx} className="text-yellow-400 text-xs md:text-sm" />
-                            ))}
-                        </div>
-
-                        {/* Inner glow ring */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-all duration-700 bg-[radial-gradient(circle_at_center,_rgba(0,180,255,0.3),_transparent_70%)]"></div>
-                    </div>
-                ))}
-            </div>
-        ))}
-    </div>
-);
+const cardVariants = {
+    initial: { opacity: 0, y: 40, scale: 0.9 },
+    animate: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.8, ease: "easeOut" },
+    },
+    hover: {
+        scale: 1.08,
+        rotate: 1.5,
+        boxShadow: "0px 0px 35px rgba(0, 180, 255, 0.4)",
+        transition: { duration: 0.4 },
+    },
+};
 
 const Testimonials = () => {
     return (
         <section
             id="testimonials"
-            className="relative py-24 px-6 md:px-12 overflow-hidden text-white 
-      bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))]"
+            className="relative py-28 px-6 md:px-12 overflow-hidden text-white bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))]"
             aria-label="Partners & Testimonials"
         >
-            {/* Ambient Glows */}
-            <div className="absolute top-[-10%] left-[5%] w-[400px] h-[400px] bg-[#00B4FF]/15 blur-[160px] rounded-full"></div>
-            <div className="absolute bottom-[-10%] right-[5%] w-[400px] h-[400px] bg-[#0D47A1]/25 blur-[200px] rounded-full"></div>
+            {/* === Background Glow Elements === */}
+            <div className="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-[#00B4FF]/15 blur-[180px] rounded-full animate-pulse"></div>
+            <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-[#0D47A1]/25 blur-[200px] rounded-full animate-pulse"></div>
 
-            {/* Heading */}
-            <div className="relative z-10 text-center mb-14">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            {/* === Section Heading === */}
+            <div className="relative z-10 text-center mb-16">
+                <motion.h2
+                    initial={{ opacity: 0, y: -40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-4xl md:text-5xl font-bold mb-4"
+                >
                     Trusted by{" "}
                     <span className="bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent">
                         Global Partners
                     </span>
-                </h2>
-                <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-                    Collaborating with industry pioneers and enterprise leaders to deliver
-                    cutting-edge IT and SAP solutions worldwide.
-                </p>
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-gray-300 max-w-2xl mx-auto text-lg"
+                >
+                    Collaborating with global enterprises to build future-ready, scalable digital ecosystems through SAP and IT excellence.
+                </motion.p>
             </div>
 
-            {/* Ticker Container */}
-            <div className="relative z-10 overflow-hidden py-6">
-                {/* Fading edges */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#061943] to-transparent"></div>
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#061943] to-transparent"></div>
+            {/* === Partner Showcase === */}
+            <motion.div
+                variants={containerVariants}
+                animate="animate"
+                className="relative z-10 flex flex-wrap justify-center gap-10 max-w-6xl mx-auto"
+            >
+                {partners.map((p, i) => (
+                    <motion.div
+                        key={i}
+                        variants={cardVariants}
+                        initial="initial"
+                        animate="animate"
+                        whileHover="hover"
+                        className="relative w-[200px] h-[180px] md:w-[240px] md:h-[200px] 
+              flex flex-col items-center justify-center rounded-2xl
+              bg-gradient-to-b from-white/10 via-white/5 to-[#061943]/40
+              backdrop-blur-xl border border-[#00B4FF]/30 
+              shadow-[0_0_30px_rgba(0,180,255,0.15)] overflow-hidden group cursor-pointer"
+                    >
+                        {/* Hover Gradient */}
+                        <motion.div
+                            className="absolute inset-0 bg-gradient-to-tr from-[#00B4FF]/15 via-transparent to-[#0D47A1]/25 opacity-0 group-hover:opacity-100 transition duration-500"
+                            layoutId={`hover-${i}`}
+                        ></motion.div>
 
-                {/* Row 1 */}
-                <div className="flex justify-center">
-                    <Row />
-                </div>
+                        {/* Logo */}
+                        <img
+                            src={p.img}
+                            alt={p.name}
+                            className="w-[120px] h-auto object-contain filter brightness-110 contrast-110 grayscale group-hover:grayscale-0 transition-all duration-500"
+                        />
 
-                <div className="h-10" />
+                        {/* Company Name */}
+                        <h3 className="text-sm md:text-base font-semibold text-gray-200 mt-3 group-hover:text-[#00B4FF] transition-colors duration-300">
+                            {p.name}
+                        </h3>
 
-                {/* Row 2 (reverse direction for dynamic flow) */}
-                <div className="flex justify-center">
-                    <Row reverse />
-                </div>
-            </div>
+                        {/* Stars */}
+                        <div className="flex mt-1">
+                            {[...Array(5)].map((_, idx) => (
+                                <FaStar key={idx} className="text-yellow-400 text-xs md:text-sm" />
+                            ))}
+                        </div>
 
-            {/* Decorative line */}
-            <div className="mt-16 h-[2px] w-full bg-gradient-to-r from-transparent via-[#00B4FF]/40 to-transparent"></div>
+                        {/* Floating Glow Ring */}
+                        <motion.div
+                            className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,180,255,0.25),transparent_70%)] opacity-0 group-hover:opacity-50 transition-all duration-700"
+                            animate={{
+                                opacity: [0.2, 0.5, 0.2],
+                                scale: [1, 1.05, 1],
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 4,
+                                ease: "easeInOut",
+                            }}
+                        />
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            {/* === Bottom Animated Line === */}
+            <motion.div
+                initial={{ width: 0, opacity: 0 }}
+                whileInView={{ width: "100%", opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="mt-20 h-[2px] bg-gradient-to-r from-transparent via-[#00B4FF]/40 to-transparent"
+            ></motion.div>
         </section>
     );
 };

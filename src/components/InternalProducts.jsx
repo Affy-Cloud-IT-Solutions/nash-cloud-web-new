@@ -1,5 +1,6 @@
 import React from "react";
-
+import TrackImage from '/images/TrackImage.jpeg'
+import TutorioImage from '/images/TutorioImage.jpeg'
 // const products = [
 //     {
 //         name: "EaseUp",
@@ -37,30 +38,36 @@ const products = [
         tagline: "Simplify productivity. Amplify impact.",
         description:
             "EaseUp is an internal productivity suite designed for cross-functional collaboration. It enables task management, automation workflows, and centralized communication — helping teams reduce friction and boost efficiency. With advanced analytics and AI-driven insights, EaseUp empowers managers to track performance and employees to stay focused on what matters most.",
-        img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80",
+        img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1600&q=80",
+        // modern dashboard workspace (light + productivity)
     },
     {
         name: "What a Recruiter",
         tagline: "Reimagining the way talent meets opportunity.",
         description:
             "What a Recruiter is our in-house job portal that transforms recruitment with AI-driven candidate matching, automated screening, and intelligent scheduling. Designed for HR professionals and enterprises, it provides powerful analytics dashboards, integrated communication tools, and real-time recruitment tracking to make hiring smarter and faster.",
-        img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
+        img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80",
+        // professional handshake / recruitment meeting
     },
     {
         name: "T-Rack",
         tagline: "Manage tickets. Track progress. Deliver excellence.",
         description:
             "T-Rack is a fully customizable internal ticketing and issue-tracking system built for IT teams. It features dynamic workflows, SLA management, and real-time escalation handling. With advanced reports, automation, and integration support, T-Rack ensures that every request — from bug reports to feature enhancements — is managed efficiently and transparently.",
-        img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80", // NEW (data dashboard / ticket system)
+        img: TrackImage,
+        // software dashboard / team tech environment
     },
     {
         name: "Tutorio",
         tagline: "Learning made smart, personal, and engaging.",
         description:
             "Tutorio is an intelligent e-learning platform designed for personalized education. It combines interactive lessons, adaptive learning paths, and AI-powered progress tracking. Whether it’s onboarding employees or training students, Tutorio offers seamless content delivery, live class integrations, and data-driven performance metrics — redefining digital learning experiences.",
-        img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80", // NEW (abstract learning / AI theme)
+        img: TutorioImage,
+        // digital learning / futuristic education
     },
 ];
+
+
 const InternalProducts = () => {
     return (
         <section
@@ -105,7 +112,7 @@ const InternalProducts = () => {
                             <img
                                 src={product.img}
                                 alt={product.name}
-                                className="w-full h-[320px] md:h-[420px] object-cover rounded-2xl transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                                className="w-full h-[320px] md:h-[350px] object-cover rounded-2xl transform group-hover:scale-110 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#061943]/80 opacity-70 group-hover:opacity-80 transition duration-500"></div>
                         </div>
