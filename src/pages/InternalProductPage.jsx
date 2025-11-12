@@ -1,5 +1,7 @@
 import React from "react";
 import { Cpu, Briefcase, BarChart3, BookOpen } from "lucide-react";
+import TrackImage from '/images/TrackImage.jpeg'
+import TutorioImage from '/images/TutorioImage.jpeg'
 
 const products = [
     {
@@ -7,7 +9,7 @@ const products = [
         description:
             "A smart productivity platform built to streamline organizational workflows, automate manual processes, and enhance team collaboration with intuitive task management and performance insights.",
         icon: <Cpu className="w-10 h-10 text-[#00B4FF]" />,
-        img: "https://images.unsplash.com/photo-1611162617213-7d7b1ae167b2?auto=format&fit=crop&w=1920&q=80",
+        img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1600&q=80",
         align: "left",
     },
     {
@@ -15,7 +17,7 @@ const products = [
         description:
             "A next-gen AI-powered job search and recruitment portal connecting global talent with organizations. Designed to make hiring smarter, faster, and more human-centered.",
         icon: <Briefcase className="w-10 h-10 text-[#00B4FF]" />,
-        img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80",
+        img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80",
         align: "right",
     },
     {
@@ -23,7 +25,7 @@ const products = [
         description:
             "An advanced ticketing and issue-tracking tool that enables teams to efficiently manage support requests, monitor progress, and ensure accountability across departments in real-time.",
         icon: <BarChart3 className="w-10 h-10 text-[#00B4FF]" />,
-        img: "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=1920&q=80",
+        img: TrackImage,
         align: "left",
     },
     {
@@ -31,7 +33,7 @@ const products = [
         description:
             "A personalized e-learning platform built to empower learners through interactive courses, live mentoring, and AI-driven progress tracking for enhanced learning outcomes.",
         icon: <BookOpen className="w-10 h-10 text-[#00B4FF]" />,
-        img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80",
+        img: TutorioImage,
         align: "right",
     },
 ];

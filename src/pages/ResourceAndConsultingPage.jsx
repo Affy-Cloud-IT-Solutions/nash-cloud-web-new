@@ -2,7 +2,7 @@ import React from "react";
 import { Users, Briefcase, Globe, LineChart, Handshake } from "lucide-react";
 import ITConsultingImage from '/images/ITConsultingImage.jpeg'
 import globalConnectImage from '/images/globalConnectImage.jpeg'
-
+import PartnershipAndAdvisory from '/images/PartnershipAndAdvisory.jpeg'
 const consultingServices = [
     {
         title: "Strategic IT Consulting",
@@ -41,7 +41,7 @@ const consultingServices = [
         description:
             "Offering long-term strategic advisory to help enterprises adapt, innovate, and grow in the ever-evolving digital landscape.",
         icon: <Handshake className="w-10 h-10 text-[#00B4FF]" />,
-        img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80", // handshake
+        img: PartnershipAndAdvisory, // handshake
         align: "left",
     },
 ];
