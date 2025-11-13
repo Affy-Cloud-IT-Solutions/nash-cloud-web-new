@@ -26,8 +26,8 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
-                    ? "backdrop-blur-xl bg-[#061943]/70 shadow-[0_0_25px_rgba(0,180,255,0.2)]"
-                    : "bg-transparent"
+                ? "backdrop-blur-xl bg-[#061943]/70 shadow-[0_0_25px_rgba(0,180,255,0.2)]"
+                : "bg-transparent"
                 }`}
         >
             {/* Top Gradient Line */}
@@ -65,7 +65,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             to="/about"
-                            className="ml-6 px-5 py-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] 
+                            className="ml-6 px-5 py-2 rounded-full bg-red-500
               text-white font-semibold shadow-[0_0_20px_rgba(0,180,255,0.4)] hover:shadow-[0_0_30px_rgba(0,180,255,0.6)] 
               hover:scale-105 transition-all duration-300"
                         >
