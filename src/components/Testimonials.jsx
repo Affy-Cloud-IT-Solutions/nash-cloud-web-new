@@ -44,7 +44,7 @@ const cardVariants = {
     hover: {
         scale: 1.08,
         rotate: 1.5,
-        boxShadow: "0px 0px 35px rgba(0, 180, 255, 0.4)",
+        boxShadow: "0px 0px 35px rgba(13,71,161,0.25)",
         transition: { duration: 0.4 },
     },
 };
@@ -53,12 +53,13 @@ const Testimonials = () => {
     return (
         <section
             id="testimonials"
-            className="relative py-28 px-6 md:px-12 overflow-hidden text-white bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))]"
+            className="relative py-28 px-6 md:px-12 overflow-hidden text-[#0D47A1] 
+      bg-gradient-to-br from-[#E3F2FD] via-white to-[#E1F5FE]"
             aria-label="Partners & Testimonials"
         >
             {/* === Background Glow Elements === */}
-            <div className="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-[#00B4FF]/15 blur-[180px] rounded-full animate-pulse"></div>
-            <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-[#0D47A1]/25 blur-[200px] rounded-full animate-pulse"></div>
+            <div className="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-[#00B4FF]/20 blur-[180px] rounded-full animate-pulse"></div>
+            <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-[#0D47A1]/15 blur-[200px] rounded-full animate-pulse"></div>
 
             {/* === Section Heading === */}
             <div className="relative z-10 text-center mb-16">
@@ -69,7 +70,7 @@ const Testimonials = () => {
                     className="text-4xl md:text-5xl font-bold mb-4"
                 >
                     Trusted by{" "}
-                    <span className="bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(13,71,161,0.25)]">
                         Global Partners
                     </span>
                 </motion.h2>
@@ -77,9 +78,10 @@ const Testimonials = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="text-gray-300 max-w-2xl mx-auto text-lg"
+                    className="text-[#0D47A1]/80 max-w-2xl mx-auto text-lg leading-relaxed"
                 >
-                    Collaborating with global enterprises to build future-ready, scalable digital ecosystems through SAP and IT excellence.
+                    Collaborating with global enterprises to build future-ready, scalable
+                    digital ecosystems through SAP and IT excellence.
                 </motion.p>
             </div>
 
@@ -98,13 +100,14 @@ const Testimonials = () => {
                         whileHover="hover"
                         className="relative w-[200px] h-[180px] md:w-[240px] md:h-[200px] 
               flex flex-col items-center justify-center rounded-2xl
-              bg-gradient-to-b from-white/10 via-white/5 to-[#061943]/40
-              backdrop-blur-xl border border-[#00B4FF]/30 
-              shadow-[0_0_30px_rgba(0,180,255,0.15)] overflow-hidden group cursor-pointer"
+              bg-white/70 backdrop-blur-xl border border-[#0D47A1]/20 
+              shadow-[0_4px_20px_rgba(13,71,161,0.1)]
+              hover:shadow-[0_8px_30px_rgba(13,71,161,0.2)]
+              overflow-hidden group cursor-pointer transition-all duration-500"
                     >
-                        {/* Hover Gradient */}
+                        {/* Hover Overlay */}
                         <motion.div
-                            className="absolute inset-0 bg-gradient-to-tr from-[#00B4FF]/15 via-transparent to-[#0D47A1]/25 opacity-0 group-hover:opacity-100 transition duration-500"
+                            className="absolute inset-0 bg-gradient-to-tr from-[#E3F2FD]/80 via-transparent to-[#00B4FF]/10 opacity-0 group-hover:opacity-100 transition duration-500"
                             layoutId={`hover-${i}`}
                         ></motion.div>
 
@@ -112,22 +115,25 @@ const Testimonials = () => {
                         <img
                             src={p.img}
                             alt={p.name}
-                            className="w-[120px] h-auto object-contain filter brightness-110 contrast-110 grayscale group-hover:grayscale-0 transition-all duration-500"
+                            className="w-[120px] h-auto object-contain filter contrast-110 grayscale group-hover:grayscale-0 transition-all duration-500"
                         />
 
                         {/* Company Name */}
-                        <h3 className="text-sm md:text-base font-semibold text-gray-200 mt-3 group-hover:text-[#00B4FF] transition-colors duration-300">
+                        <h3 className="text-sm md:text-base font-semibold text-[#0D47A1] mt-3 group-hover:text-[#00B4FF] transition-colors duration-300">
                             {p.name}
                         </h3>
 
                         {/* Stars */}
                         <div className="flex mt-1">
                             {[...Array(5)].map((_, idx) => (
-                                <FaStar key={idx} className="text-yellow-400 text-xs md:text-sm" />
+                                <FaStar
+                                    key={idx}
+                                    className="text-yellow-400 text-xs md:text-sm drop-shadow-[0_0_3px_rgba(255,215,0,0.4)]"
+                                />
                             ))}
                         </div>
 
-                        {/* Floating Glow Ring */}
+                        {/* Glow Ring Animation */}
                         <motion.div
                             className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,180,255,0.25),transparent_70%)] opacity-0 group-hover:opacity-50 transition-all duration-700"
                             animate={{
@@ -144,7 +150,7 @@ const Testimonials = () => {
                 ))}
             </motion.div>
 
-            {/* === Bottom Animated Line === */}
+            {/* === Bottom Accent Line === */}
             <motion.div
                 initial={{ width: 0, opacity: 0 }}
                 whileInView={{ width: "100%", opacity: 1 }}
