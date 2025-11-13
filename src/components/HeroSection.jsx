@@ -71,12 +71,12 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(6,25,67,0.95),_rgba(7,12,28,0.98))]"></div>
 
             {/* Ambient Glows */}
-            <div className="absolute top-[20%] right-[10%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-[#00B4FF]/25 blur-[180px] rounded-full"></div>
-            <div className="absolute bottom-[10%] left-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#0D47A1]/30 blur-[200px] rounded-full"></div>
+            <div className="absolute top-[20%] right-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#00B4FF]/25 blur-[200px] rounded-full"></div>
+            <div className="absolute bottom-[10%] left-[10%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#0D47A1]/30 blur-[240px] rounded-full"></div>
 
             {/* Header */}
-            <div className="text-center mb-8 z-10 max-w-3xl md:max-w-4xl mx-auto px-4 sm:px-6">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-[#00B4FF] mb-4 drop-shadow-[0_0_15px_rgba(0,180,255,0.4)]">
+            <div className="text-center mb-8 z-10 max-w-3xl md:max-w-5xl mx-auto px-4 sm:px-6">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-[#fff] mb-4 drop-shadow-[0_0_15px_rgba(0,180,255,0.4)]">
                     Our Expertise
                 </h1>
                 <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
@@ -99,8 +99,8 @@ const HeroSection = () => {
                 </p>
             </div>
 
-            {/* === Carousel === */}
-            <div className="relative w-full flex justify-center items-center perspective-[1200px] h-[400px] sm:h-[460px] md:h-[500px] lg:h-[540px] z-10 mt-6 md:mt-8">
+            {/* === Wider Responsive Carousel === */}
+            <div className="relative flex justify-center items-center w-[90%] max-w-[1600px] perspective-[1600px] h-[420px] sm:h-[480px] md:h-[520px] lg:h-[560px] z-10 mt-6 md:mt-10">
                 {slides.map((slide, index) => {
                     const position = (index - current + slides.length) % slides.length;
                     let transform = "";
@@ -108,17 +108,15 @@ const HeroSection = () => {
                     let scale = 1;
 
                     if (position === 0) {
-                        transform = "translateZ(200px)";
+                        transform = "translateZ(250px)";
                         scale = 1.05;
                         opacity = 1;
                     } else if (position === 1 || position === slides.length - 1) {
-                        transform = `translateX(${position === 1 ? "200px" : "-200px"
-                            }) rotateY(${position === 1 ? "-20deg" : "20deg"}) translateZ(40px)`;
+                        transform = `translateX(${position === 1 ? "350px" : "-350px"}) rotateY(${position === 1 ? "-25deg" : "25deg"}) translateZ(40px)`;
                         scale = 0.9;
                         opacity = 0.8;
                     } else {
-                        transform = `translateX(${position === 2 ? "350px" : "-350px"
-                            }) rotateY(${position === 2 ? "-35deg" : "35deg"}) translateZ(-180px)`;
+                        transform = `translateX(${position === 2 ? "600px" : "-600px"}) rotateY(${position === 2 ? "-40deg" : "40deg"}) translateZ(-200px)`;
                         scale = 0.8;
                         opacity = 0.3;
                     }
@@ -127,7 +125,8 @@ const HeroSection = () => {
                         <Link
                             to={slide.link}
                             key={slide.id}
-                            className="absolute w-[240px] sm:w-[280px] md:w-[360px] lg:w-[400px] h-[280px] sm:h-[320px] md:h-[360px] lg:h-[380px] rounded-3xl overflow-hidden text-center transition-all duration-700 ease-in-out transform-gpu group hover:scale-[1.05]"
+                            className="absolute w-[240px] sm:w-[300px] md:w-[360px] lg:w-[400px] h-[280px] sm:h-[340px] md:h-[380px] lg:h-[420px]
+  rounded-3xl overflow-hidden text-center transition-all duration-700 ease-in-out transform-gpu group hover:scale-[1.05]"
                             style={{
                                 transform,
                                 opacity,
@@ -135,54 +134,57 @@ const HeroSection = () => {
                                 zIndex: position === 0 ? 10 : 5 - Math.abs(position),
                             }}
                         >
-                            {/* Card Background */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/85 backdrop-blur-md rounded-3xl shadow-[0_4px_25px_rgba(255,255,255,0.15)] border border-white/20"></div>
+                            {/* === Card Background === */}
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#00B4FF_0%,#0D47A1_60%,#081325_100%)] border border-[#00B4FF]/40 backdrop-blur-lg rounded-3xl shadow-[0_0_30px_rgba(0,180,255,0.2)] group-hover:shadow-[0_0_55px_rgba(0,180,255,0.45)] transition-all duration-700"></div>
 
-                            {/* Image Section */}
+
+                            {/* === Top Image Section === */}
                             <div className="relative h-[55%] sm:h-[60%] overflow-hidden rounded-t-3xl">
                                 <img
                                     src={slide.img}
                                     alt={slide.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A1530]/70"></div>
                             </div>
 
-                            {/* Text Section */}
-                            <div className="relative h-[45%] px-4 py-4 flex flex-col items-center justify-center text-center bg-[radial-gradient(circle_at_top_left,_#f0f7ff_0%,_#ffffff_60%,_#f3f8fb_100%)] backdrop-blur-xl border-t border-white/30 shadow-[inset_0_6px_25px_rgba(0,0,0,0.05)]">
-                                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0D47A1] mb-1 sm:mb-2 drop-shadow-[0_0_6px_rgba(255,255,255,0.3)]">
+                            {/* === Text Section === */}
+                            <div className="relative h-[45%] px-5 py-5 flex flex-col items-center justify-center text-center">
+                                <h2 className="text-xl sm:text-2xl font-semibold text-[#00B4FF] mb-2 drop-shadow-[0_0_10px_rgba(0,180,255,0.6)] group-hover:text-white transition-all duration-300">
                                     {slide.title}
                                 </h2>
-                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed max-w-xs">
+                                <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-sm group-hover:text-gray-100 transition-colors duration-300">
                                     {slide.subtitle}
                                 </p>
                             </div>
 
-                            {/* Hover Glow Border */}
-                            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-[#00B4FF]/70 shadow-[0_0_25px_rgba(0,180,255,0.15)] group-hover:shadow-[0_0_40px_rgba(0,180,255,0.45)] transition-all duration-700"></div>
+                            {/* === Glowing Outline Effect === */}
+                            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-[#00B4FF]/70 shadow-[0_0_25px_rgba(0,180,255,0.2)] group-hover:shadow-[0_0_55px_rgba(0,180,255,0.5)] transition-all duration-700"></div>
                         </Link>
+
                     );
                 })}
 
                 {/* Arrows */}
                 <button
                     onClick={prevSlide}
-                    className="absolute left-4 sm:left-[8%] md:left-[12%] bg-white/10 hover:bg-[#00B4FF]/25 text-white/80 hover:text-[#00B4FF] text-2xl sm:text-3xl md:text-4xl p-2 sm:p-3 rounded-full backdrop-blur-md border border-[#00B4FF]/30 transition-all duration-300 z-20"
+                    className="absolute left-2 sm:left-[3%] md:left-[5%] bg-white/10 hover:bg-[#00B4FF]/25 text-white/80 hover:text-[#00B4FF] text-2xl sm:text-3xl md:text-4xl p-2 sm:p-3 rounded-full backdrop-blur-md border border-[#00B4FF]/30 transition-all duration-300 z-20"
                 >
                     ❮
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-4 sm:right-[8%] md:right-[12%] bg-white/10 hover:bg-[#00B4FF]/25 text-white/80 hover:text-[#00B4FF] text-2xl sm:text-3xl md:text-4xl p-2 sm:p-3 rounded-full backdrop-blur-md border border-[#00B4FF]/30 transition-all duration-300 z-20"
+                    className="absolute right-2 sm:right-[3%] md:right-[5%] bg-white/10 hover:bg-[#00B4FF]/25 text-white/80 hover:text-[#00B4FF] text-2xl sm:text-3xl md:text-4xl p-2 sm:p-3 rounded-full backdrop-blur-md border border-[#00B4FF]/30 transition-all duration-300 z-20"
                 >
                     ❯
                 </button>
             </div>
 
             {/* Bottom Glow */}
-            <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] md:w-[900px] h-[300px] sm:h-[380px] bg-[#00B4FF]/15 blur-[180px] rounded-full"></div>
+            <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[900px] sm:w-[1100px] md:w-[1300px] h-[350px] sm:h-[420px] bg-[#00B4FF]/15 blur-[180px] rounded-full"></div>
         </section>
     );
 };
 
 export default HeroSection;
-// stop stop stop stop stpo stpo stpo stpo stpo stpo 
+// stop stop stop stop stop sto pstop sto psto psto p

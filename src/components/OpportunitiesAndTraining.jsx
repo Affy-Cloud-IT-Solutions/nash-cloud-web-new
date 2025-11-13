@@ -37,7 +37,7 @@ const OpportunitiesAndTraining = () => {
 
             {/* === Section Content === */}
             <div className="relative z-10 max-w-6xl mx-auto text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,180,255,0.25)]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-4 bg-[#fff] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,180,255,0.25)]">
                     Opportunities & Training
                 </h2>
                 <p className="text-gray-300 text-lg mb-16 max-w-3xl mx-auto">
@@ -49,31 +49,34 @@ const OpportunitiesAndTraining = () => {
                 <div className="grid md:grid-cols-2 gap-10">
                     {opportunities.map((item, index) => (
                         <div
-                            key={index}
-                            className="group relative rounded-2xl p-10 overflow-hidden border border-[#00B4FF]/25 bg-white/5 backdrop-blur-lg 
-              shadow-[0_0_30px_rgba(0,180,255,0.1)] hover:shadow-[0_0_40px_rgba(0,180,255,0.3)] transition-all duration-500 hover:-translate-y-2"
+                            className="group relative rounded-2xl p-10 overflow-hidden
+  bg-[linear-gradient(135deg,#0B172A_40%,#EAF4FF_120%)]
+  border border-[#00B4FF]/30 backdrop-blur-lg
+  shadow-[0_8px_30px_rgba(0,180,255,0.15)]
+  hover:shadow-[0_10px_40px_rgba(0,180,255,0.35)]
+  transition-all duration-500 hover:-translate-y-2"
                         >
-                            {/* Background Glow */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1]/30 to-[#00B4FF]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            {/* Glow overlay */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-[#00B4FF]/15 to-transparent rounded-2xl"></div>
 
                             {/* Icon */}
                             <div className="relative z-10 flex justify-center mb-6">
-                                <div className="p-4 rounded-full bg-[#0D47A1]/40 border border-[#00B4FF]/40 group-hover:border-[#00B4FF]/80 transition-all duration-500">
+                                <div className="p-4 rounded-full bg-[#00B4FF]/15 border border-[#00B4FF]/40 shadow-[0_0_15px_rgba(0,180,255,0.25)]">
                                     {item.icon}
                                 </div>
                             </div>
 
-                            {/* Title */}
-                            <h3 className="relative z-10 text-2xl font-semibold text-[#00B4FF] mb-4 group-hover:text-white transition-all duration-300">
+                            <h3 className="relative z-10 text-2xl font-semibold text-white mb-4 group-hover:text-[#00B4FF] transition-all duration-300">
                                 {item.title}
                             </h3>
 
-                            {/* Description */}
-                            <p className="relative z-10 text-gray-300 leading-relaxed">
+                            <p className="relative z-10 text-gray-300 leading-relaxed group-hover:text-gray-100 transition-colors duration-300">
                                 {item.description}
                             </p>
                         </div>
+
                     ))}
+
                 </div>
             </div>
 

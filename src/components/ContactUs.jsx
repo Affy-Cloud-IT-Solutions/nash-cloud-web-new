@@ -28,7 +28,7 @@ const ContactUs = () => {
 
             {/* Header */}
             <div className="relative z-10 text-center mb-14">
-                <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-6 bg-[#fff] bg-clip-text text-transparent">
                     Contact Us
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-lg">

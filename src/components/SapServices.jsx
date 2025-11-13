@@ -47,7 +47,7 @@ const SapServices = () => {
                 viewport={{ once: true }}
                 className="relative z-10 text-center mb-20"
             >
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent mb-4 drop-shadow-[0_0_10px_rgba(13,71,161,0.4)]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent mb-4 drop-shadow-[0_0_10px_rgba(13,71,161,0.4)]">
                     SAP Services
                 </h2>
                 <p className="text-[#0D47A1]/80 text-lg max-w-3xl mx-auto">

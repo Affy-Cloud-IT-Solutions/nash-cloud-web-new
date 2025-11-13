@@ -58,7 +58,7 @@ const ITSolutions = () => {
 
             {/* === Content === */}
             <div className="relative z-10 max-w-7xl mx-auto text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,180,255,0.25)]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-4 bg-[#fff] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,180,255,0.25)]">
                     IT Solutions
                 </h2>
                 <p className="text-gray-300 text-lg mb-16 max-w-3xl mx-auto">
@@ -71,34 +71,35 @@ const ITSolutions = () => {
                     {itSolutions.map((solution, index) => (
                         <div
                             key={index}
-                            className="group relative rounded-2xl overflow-hidden backdrop-blur-lg border border-[#00B4FF]/25 hover:border-[#00B4FF]/50 
-                            shadow-[0_0_30px_rgba(0,180,255,0.15)] hover:shadow-[0_0_45px_rgba(0,180,255,0.35)] transition-all duration-500 hover:-translate-y-2"
+                            className="group relative rounded-2xl overflow-hidden backdrop-blur-xl 
+        border border-[#00B4FF]/20 hover:border-[#00B4FF]/50 
+        bg-[linear-gradient(145deg,rgba(5,10,25,0.9),rgba(10,20,45,0.95))] 
+        shadow-[0_0_25px_rgba(0,180,255,0.1)] hover:shadow-[0_0_45px_rgba(0,180,255,0.3)] 
+        transition-all duration-500 hover:-translate-y-2"
                         >
-                            {/* Background Image */}
-                            {/* <div
-                                className="absolute inset-0 bg-cover bg-center scale-105 group-hover:scale-110 transition-transform duration-700 brightness-[0.85]"
-                                style={{ backgroundImage: `url(${solution.img})` }}
-                            ></div> */}
-
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-[#0D47A1]/40 via-[#061943]/70 to-[#061943]/95"></div>
+                            {/* Background Glow Layer */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1]/30 to-[#00B4FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                             {/* Card Content */}
                             <div className="relative z-10 p-8 flex flex-col items-center text-center h-full">
-                                <div className="mb-5 bg-[#0D47A1]/50 p-4 rounded-full border border-[#00B4FF]/40 shadow-[0_0_20px_rgba(0,180,255,0.3)] group-hover:scale-110 transition-transform duration-300">
+                                {/* Icon Bubble */}
+                                <div className="mb-5 bg-[#0D47A1]/60 p-4 rounded-full border border-[#00B4FF]/40 shadow-[0_0_25px_rgba(0,180,255,0.25)] group-hover:scale-110 transition-transform duration-300">
                                     {solution.icon}
                                 </div>
 
-                                <h3 className="text-xl font-semibold mb-3 text-[#00B4FF] group-hover:text-white transition-colors duration-300">
+                                {/* Title */}
+                                <h3 className="text-xl font-semibold mb-3 text-[#00B4FF] group-hover:text-white transition-colors duration-300 drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">
                                     {solution.title}
                                 </h3>
 
-                                <p className="text-gray-200 text-sm leading-relaxed">
+                                {/* Description */}
+                                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-100 transition-colors duration-300">
                                     {solution.description}
                                 </p>
                             </div>
                         </div>
                     ))}
+
                 </div>
             </div>
 
@@ -109,3 +110,4 @@ const ITSolutions = () => {
 };
 
 export default ITSolutions;
+// stop stop stpo stpo stop stop stop stop 

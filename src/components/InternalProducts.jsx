@@ -44,7 +44,7 @@ const InternalProducts = () => {
 
             {/* === Header === */}
             <div className="relative z-10 max-w-7xl mx-auto text-center mb-20">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(13,71,161,0.3)]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-6 bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(13,71,161,0.3)]">
                     Internal Products
                 </h2>
                 <p className="text-[#0D47A1]/80 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -67,7 +67,7 @@ const InternalProducts = () => {
                             <img
                                 src={product.img}
                                 alt={product.name}
-                                className="w-full h-[320px] md:h-[420px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                className="w-full h-[200px] md:h-[300px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/80 opacity-70 group-hover:opacity-90 transition duration-500"></div>
                         </div>
