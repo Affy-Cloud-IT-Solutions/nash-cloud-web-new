@@ -33,11 +33,165 @@ const SapServices = () => {
     return (
         <section
             id="sap"
-            className="relative py-24 px-6 md:px-12 overflow-hidden bg-gradient-to-br from-[#E3F2FD] via-white to-[#E1F5FE] text-[#0D47A1]"
+            className="relative py-24 px-6 md:px-12 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50 text-[#0D47A1]"
         >
-            {/* Background Glow Accents */}
-            <div className="absolute top-[10%] left-[15%] w-[400px] h-[400px] bg-[#00B4FF]/20 blur-[150px] rounded-full"></div>
-            <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[#0D47A1]/10 blur-[180px] rounded-full"></div>
+            {/* Solar Ovals Background */}
+            <div className="absolute inset-0">
+                {/* Large Central Solar Oval */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-200/40 to-cyan-200/30 rounded-full blur-80 opacity-70"></div>
+
+                {/* Top Left Solar Oval */}
+                <div className="absolute top-20 left-10 w-[500px] h-[250px] bg-gradient-to-br from-blue-100/50 to-transparent rounded-full blur-60 opacity-60 rotate-12"></div>
+
+                {/* Bottom Right Solar Oval */}
+                <div className="absolute bottom-20 right-10 w-[600px] h-[300px] bg-gradient-to-tl from-cyan-100/40 to-transparent rounded-full blur-70 opacity-60 -rotate-6"></div>
+
+                {/* Top Right Solar Oval */}
+                <div className="absolute top-32 right-20 w-[400px] h-[200px] bg-gradient-to-bl from-blue-100/30 to-transparent rounded-full blur-50 opacity-50 rotate-45"></div>
+
+                {/* Bottom Left Solar Oval */}
+                <div className="absolute bottom-32 left-20 w-[450px] h-[225px] bg-gradient-to-tr from-cyan-100/35 to-transparent rounded-full blur-55 opacity-55 -rotate-45"></div>
+            </div>
+
+            {/* Animated Orbital Rings */}
+            <div className="absolute inset-0">
+                {/* Large Orbital Ring */}
+                <motion.div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-blue-200/30 rounded-full"
+                    style={{
+                        width: '600px',
+                        height: '300px',
+                    }}
+                    animate={{
+                        rotate: 360,
+                        scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                        rotate: {
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear"
+                        },
+                        scale: {
+                            duration: 4,
+                            repeat: Infinity,
+                        }
+                    }}
+                />
+
+                {/* Medium Orbital Ring */}
+                <motion.div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-cyan-200/25 rounded-full"
+                    style={{
+                        width: '400px',
+                        height: '200px',
+                    }}
+                    animate={{
+                        rotate: -360,
+                        scale: [1, 1.05, 1],
+                    }}
+                    transition={{
+                        rotate: {
+                            duration: 15,
+                            repeat: Infinity,
+                            ease: "linear"
+                        },
+                        scale: {
+                            duration: 3,
+                            repeat: Infinity,
+                        }
+                    }}
+                />
+
+                {/* Small Orbital Ring */}
+                <motion.div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-blue-300/20 rounded-full"
+                    style={{
+                        width: '250px',
+                        height: '125px',
+                    }}
+                    animate={{
+                        rotate: 360,
+                        scale: [1, 1.08, 1],
+                    }}
+                    transition={{
+                        rotate: {
+                            duration: 10,
+                            repeat: Infinity,
+                            ease: "linear"
+                        },
+                        scale: {
+                            duration: 2,
+                            repeat: Infinity,
+                        }
+                    }}
+                />
+            </div>
+
+            {/* Floating Orbital Planets */}
+            <div className="absolute inset-0">
+                {[...Array(8)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="absolute w-4 h-4 bg-gradient-to-br from-blue-300 to-cyan-400 rounded-full shadow-lg"
+                        style={{
+                            left: '50%',
+                            top: '50%',
+                        }}
+                        animate={{
+                            x: [
+                                Math.cos((i * 45) * Math.PI / 180) * 300,
+                                Math.cos((i * 45 + 180) * Math.PI / 180) * 300
+                            ],
+                            y: [
+                                Math.sin((i * 45) * Math.PI / 180) * 150,
+                                Math.sin((i * 45 + 180) * Math.PI / 180) * 150
+                            ],
+                            scale: [1, 1.3, 1],
+                        }}
+                        transition={{
+                            x: {
+                                duration: Math.random() * 10 + 15,
+                                repeat: Infinity,
+                                ease: "linear"
+                            },
+                            y: {
+                                duration: Math.random() * 10 + 15,
+                                repeat: Infinity,
+                                ease: "linear"
+                            },
+                            scale: {
+                                duration: 2,
+                                repeat: Infinity,
+                            }
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Glowing Particles */}
+            <div className="absolute inset-0">
+                {[...Array(15)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="absolute w-2 h-2 bg-blue-300/40 rounded-full blur-sm"
+                        initial={{
+                            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
+                            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+                        }}
+                        animate={{
+                            y: [null, -20, 0],
+                            x: [null, Math.random() * 10 - 5],
+                            opacity: [0.3, 0.8, 0.3],
+                        }}
+                        transition={{
+                            duration: Math.random() * 4 + 3,
+                            repeat: Infinity,
+                            delay: Math.random() * 2,
+                        }}
+                    />
+                ))}
+            </div>
 
             {/* Section Header */}
             <motion.div
@@ -47,10 +201,10 @@ const SapServices = () => {
                 viewport={{ once: true }}
                 className="relative z-10 text-center mb-20"
             >
-                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent mb-4 drop-shadow-[0_0_10px_rgba(13,71,161,0.4)]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] bg-clip-text text-transparent mb-4">
                     SAP Services
                 </h2>
-                <p className="text-[#0D47A1]/80 text-lg max-w-3xl mx-auto">
+                <p className="text-[#0D47A1]/80 text-lg max-w-3xl mx-auto font-medium">
                     Empower your digital transformation journey with our comprehensive SAP
                     expertise — connecting innovation with intelligence.
                 </p>
@@ -77,65 +231,50 @@ const SapServices = () => {
                     >
                         {/* Connecting Line */}
                         <div
-                            className={`absolute hidden md:block top-1/2 w-[150%] h-[2px] bg-gradient-to-r from-transparent via-[#00B4FF]/30 to-transparent ${index % 2 === 0 ? "left-[50%]" : "right-[50%]"
+                            className={`absolute hidden md:block top-1/2 w-[150%] h-[2px] bg-gradient-to-r from-transparent via-[#00B4FF]/40 to-transparent ${index % 2 === 0 ? "left-[50%]" : "right-[50%]"
                                 }`}
                         ></div>
 
                         {/* Icon Bubble */}
                         <div
-                            className="p-6 rounded-full border border-white/30 
-  bg-gradient-to-br from-[#0D47A1] via-[#0A3C91] to-[#092E73] 
-  shadow-[0_0_30px_rgba(255,255,255,0.15)] 
-  hover:shadow-[0_0_45px_rgba(255,255,255,0.25)] 
-  transition-all duration-500 relative overflow-hidden flex items-center justify-center"
+                            className="p-6 rounded-full border-2 border-[#0D47A1]/30 
+  bg-white/90 backdrop-blur-sm
+  shadow-[0_0_30px_rgba(13,71,161,0.3)] 
+  hover:shadow-[0_0_45px_rgba(13,71,161,0.4)] 
+  transition-all duration-500 relative overflow-hidden flex items-center justify-center group hover:scale-110"
                         >
-                            {/* Inner subtle glow animation */}
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.15),transparent_70%)] blur-md opacity-70"></div>
-
-                            {/* Glowing Icon */}
-                            <div className="relative z-10 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse-slow">
+                            <div className="relative z-10 text-[#0D47A1]">
                                 {React.cloneElement(service.icon, {
-                                    className: "w-10 h-10 text-white", // Force icon color to white
+                                    className: "w-10 h-10",
                                 })}
                             </div>
                         </div>
 
-
                         {/* Service Card */}
                         <div
-                            className="relative max-w-md text-center md:text-left p-8 rounded-2xl border border-white/20 
-  bg-gradient-to-br from-[#0D47A1] via-[#0A3C91] to-[#082B66]
-  shadow-[0_8px_25px_rgba(255,255,255,0.1)] 
-  hover:shadow-[0_12px_35px_rgba(255,255,255,0.25)] 
-  transition-all duration-500 group hover:-translate-y-1 overflow-hidden"
+                            className="relative max-w-md text-center md:text-left p-8 rounded-2xl border-2 border-[#0D47A1]/20 
+  bg-white/95 backdrop-blur-sm
+  shadow-[0_8px_40px_rgba(13,71,161,0.2)] 
+  hover:shadow-[0_12px_50px_rgba(13,71,161,0.3)] 
+  transition-all duration-500 group hover:-translate-y-2"
                         >
-                            {/* Glow sheen on hover */}
-                            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.3)_50%,rgba(255,255,255,0)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
-
-                            <h3 className="text-2xl font-semibold mb-3 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300">
+                            <h3 className="text-2xl font-semibold mb-3 text-[#0D47A1] relative z-10 group-hover:text-[#00B4FF] transition-colors duration-300">
                                 {service.title}
                             </h3>
 
-                            <p className="text-white/90 text-sm leading-relaxed drop-shadow-[0_0_6px_rgba(255,255,255,0.4)] relative z-10">
+                            <p className="text-[#0D47A1]/80 text-sm leading-relaxed relative z-10">
                                 {service.description}
                             </p>
-
-                            {/* Hover glow background */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
-                                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent blur-2xl"></div>
-                            </div>
                         </div>
-
-
                     </motion.div>
                 ))}
             </div>
 
-            {/* Bottom Glow */}
-            <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#00B4FF]/15 blur-[200px] rounded-full"></div>
+            {/* Bottom Solar Oval */}
+            <div className="absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-t from-blue-200/30 to-transparent rounded-full blur-60 opacity-50"></div>
         </section>
     );
 };
 
 export default SapServices;
-// stop stpo stpo stop stop stop stop stop stop 
+// stop stop stop stop stop sotp sopt stop 
