@@ -53,15 +53,23 @@ const Footer = () => {
                 </div>
 
                 {/* bottom bar */}
+                {/* bottom bar */}
                 <div className="border-t border-white/10">
                     <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-sm">
                         <div>© {new Date().getFullYear()} Nash Cloud IT Solutions. All rights reserved.</div>
+
                         <div className="flex gap-4 mt-2 sm:mt-0">
                             <a href="#" className="hover:text-white">Privacy</a>
                             <a href="#" className="hover:text-white">Terms</a>
                         </div>
                     </div>
+
+                    {/* powered by section */}
+                    <div className="text-center py-3 text-gray-400 text-xs border-t border-white/10">
+                        Powered by <span className="text-[#00B4FF] font-semibold">Affy Cloud IT Solutions</span>
+                    </div>
                 </div>
+
             </div>
         </footer>
     );
