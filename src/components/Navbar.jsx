@@ -40,7 +40,7 @@ const Navbar = () => {
                     onClick={() => navigate("/")}
                     className="text-xl md:text-2xl font-bold text-white cursor-pointer tracking-wide hover:text-[#00B4FF] transition-all"
                 >
-                    <span className="text-[#00B4FF]">Nash</span> Cloud IT Solutions
+                    <span className="text-[#00B4FF]">Tech</span> Trade IT Solutions
                 </div>
 
                 {/* Desktop Navigation */}

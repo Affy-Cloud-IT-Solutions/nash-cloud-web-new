@@ -5,7 +5,7 @@ const opportunities = [
     {
         title: "Career Opportunities",
         description:
-            "Join a global team of innovators and problem-solvers. At Nash Cloud IT Solutions, we offer dynamic opportunities for professionals passionate about IT, SAP, and digital transformation.",
+            "Join a global team of innovators and problem-solvers. At Tech Trade IT Solutions, we offer dynamic opportunities for professionals passionate about IT, SAP, and digital transformation.",
         icon: <Briefcase className="w-10 h-10 text-[#00B4FF]" />,
     },
     {

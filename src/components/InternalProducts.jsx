@@ -48,7 +48,7 @@ const InternalProducts = () => {
                     Internal Products
                 </h2>
                 <p className="text-[#0D47A1]/80 text-lg max-w-3xl mx-auto leading-relaxed">
-                    At Nash Cloud IT Solutions, we don’t just deliver client projects — we innovate.
+                    At Tech Trade IT Solutions, we don’t just deliver client projects — we innovate.
                     Our in-house products are designed to solve real enterprise challenges through
                     intelligent automation, data-driven decision-making, and beautifully engineered technology.
                 </p>

@@ -20,7 +20,7 @@ const About = () => {
                 </h1>
 
                 <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6 max-w-3xl mx-auto animate-fadeInUp">
-                    Nash Cloud IT Solutions is a leading technology consulting company
+                    Tech Trade IT Solutions is a leading technology consulting company
                     specializing in <span className="text-[#00B4FF] font-semibold">IT</span>,{" "}
                     <span className="text-[#00B4FF] font-semibold">SAP</span>, and{" "}
                     <span className="text-[#00B4FF] font-semibold">Digital Transformation</span> services.

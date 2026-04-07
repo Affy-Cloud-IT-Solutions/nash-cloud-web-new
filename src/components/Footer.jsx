@@ -12,7 +12,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <div className="text-2xl font-extrabold">
-                            <span className="text-[#00B4FF]">Nash</span> Cloud IT Solutions
+                            <span className="text-[#00B4FF]">Tech</span> Trade IT Solutions
                         </div>
                         <p className="text-gray-300 mt-3">
                             Enterprise-grade IT, SAP, Automation & Consulting services.
@@ -46,7 +46,7 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">Contact</h4>
                         <ul className="space-y-2 text-gray-300">
                             <li>United Kingdom</li>
-                            <li>contact@nashcloudit.com</li>
+                            <li>contact@techtradeitsolutions.com</li>
                             <li>+44 7776 839310</li>
                         </ul>
                     </div>
@@ -56,7 +56,7 @@ const Footer = () => {
                 {/* bottom bar */}
                 <div className="border-t border-white/10">
                     <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-sm">
-                        <div>© {new Date().getFullYear()} Nash Cloud IT Solutions. All rights reserved.</div>
+                        <div>© {new Date().getFullYear()} Tech Trade IT Solutions. All rights reserved.</div>
 
                         <div className="flex gap-4 mt-2 sm:mt-0">
                             <a href="#" className="hover:text-white">Privacy</a>

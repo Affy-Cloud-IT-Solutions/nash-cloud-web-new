@@ -37,7 +37,7 @@ const Navbar = () => {
                     className="text-2xl md:text-3xl font-bold tracking-wide text-white cursor-pointer"
                     onClick={() => navigate("/")}
                 >
-                    <span className="text-[#00B4FF]">Nash</span> Cloud IT Solutions
+                    <span className="text-[#00B4FF]">Tech</span> Trade IT Solutions
                 </div>
 
                 <ul className="hidden md:flex space-x-10 text-gray-200 font-medium">

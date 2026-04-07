@@ -70,7 +70,7 @@ const ResourceAndConsultingPage = () => {
                 <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                     At{" "}
                     <span className="text-[#00B4FF] font-semibold">
-                        Nash Cloud IT Solutions
+                        Tech Trade IT Solutions
                     </span>
                     , we deliver smart, scalable, and people-driven consulting services
                     that empower enterprises to thrive in the digital era.

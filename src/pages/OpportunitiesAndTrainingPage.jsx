@@ -56,7 +56,7 @@ const OpportunitiesAndTrainingPage = () => {
                     Opportunities & Training
                 </h1>
                 <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                    At <span className="text-[#00B4FF] font-semibold">Nash Cloud IT Solutions</span>, we believe in shaping
+                    At <span className="text-[#00B4FF] font-semibold">Tech Trade IT Solutions</span>, we believe in shaping
                     the next generation of tech innovators. Our programs foster skill development, innovation,
                     and real-world experience to prepare you for global opportunities.
                 </p>
