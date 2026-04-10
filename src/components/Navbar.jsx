@@ -44,7 +44,7 @@ const Navbar = () => {
                     <img
                         src="/images/logo.png"   // 👉 yaha apni image ka path do
                         alt="Tech Trade IT Solutions"
-                        className="h-8 md:h-12 object-contain hover:opacity-80 transition-all"
+                        className="h-10 md:h-12 object-contain hover:opacity-80 transition-all"
                     />
                 </div>
 
@@ -85,15 +85,15 @@ const Navbar = () => {
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     <span
-                        className={`w-7 h-[2px] rounded-full transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px] bg-[#00B4FF]" : "bg-white"
+                        className={`w-7 h-[2px] rounded-full transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px] bg-[#00B4FF]" : "bg-[#0d47a1]"
                             }`}
                     ></span>
                     <span
-                        className={`w-7 h-[2px] rounded-full transition-all duration-300 ${menuOpen ? "opacity-0" : "bg-white"
+                        className={`w-7 h-[2px] rounded-full transition-all duration-300 ${menuOpen ? "opacity-0" : "bg-[#0d47a1]"
                             }`}
                     ></span>
                     <span
-                        className={`w-7 h-[2px] rounded-full transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px] bg-[#00B4FF]" : "bg-white"
+                        className={`w-7 h-[2px] rounded-full transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px] bg-[#00B4FF]" : "bg-[#0d47a1]"
                             }`}
                     ></span>
                 </div>

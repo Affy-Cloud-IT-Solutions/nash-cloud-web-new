@@ -19,7 +19,7 @@ const Footer = () => {
                             <img
                                 src="/images/logo.png"   // 👉 yaha apni image ka path do
                                 alt="Tech Trade IT Solutions"
-                                className="h-8 md:h-12 object-contain hover:opacity-80 transition-all"
+                                className="h-10 md:h-12 object-contain hover:opacity-80 transition-all"
                             />
                         </div>
                         <p className="text-gray-600 mt-3">
