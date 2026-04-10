@@ -42,9 +42,9 @@ const Navbar = () => {
                 >
                     {/* <span className="text-[#00B4FF]">Tech</span> Trade IT Solutions */}
                     <img
-                        src="/images/logo.png"   // 👉 yaha apni image ka path do
+                        src="/images/logo.png"
                         alt="Tech Trade IT Solutions"
-                        className="h-10 md:h-12 object-contain hover:opacity-80 transition-all"
+                        className="h-10 md:h-16 object-contain hover:opacity-80 transition-all"
                     />
                 </div>
 
