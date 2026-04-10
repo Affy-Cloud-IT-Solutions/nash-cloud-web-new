@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white ${isScrolled
                 ? "backdrop-blur-xl bg-[#061943]/70 shadow-[0_0_25px_rgba(0,180,255,0.2)]"
                 : "bg-transparent"
                 }`}
@@ -34,17 +34,22 @@ const Navbar = () => {
             <div className="h-[3px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
 
             {/* Navbar Content */}
-            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
+            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-2 flex justify-between items-center">
                 {/* Logo */}
                 <div
                     onClick={() => navigate("/")}
                     className="text-xl md:text-2xl font-bold text-white cursor-pointer tracking-wide hover:text-[#00B4FF] transition-all"
                 >
-                    <span className="text-[#00B4FF]">Tech</span> Trade IT Solutions
+                    {/* <span className="text-[#00B4FF]">Tech</span> Trade IT Solutions */}
+                    <img
+                        src="/images/logo.png"   // 👉 yaha apni image ka path do
+                        alt="Tech Trade IT Solutions"
+                        className="h-8 md:h-12 object-contain hover:opacity-80 transition-all"
+                    />
                 </div>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden md:flex items-center space-x-10 text-gray-200 font-medium">
+                <ul className="hidden md:flex items-center space-x-10 text-gray-900 font-medium ">
                     {[
                         { label: "Home", id: "home" },
                         { label: "Testimonials", id: "testimonials" },
